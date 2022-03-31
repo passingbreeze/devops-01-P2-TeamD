@@ -1,4 +1,4 @@
-name: Build Image and Push It to HJM Amazon ECR
+name: HJM Amazon ECR
 
 on:
   push:
