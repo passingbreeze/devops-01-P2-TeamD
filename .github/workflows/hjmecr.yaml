@@ -3,7 +3,8 @@ name: HJM Amazon ECR
 on:
   push:
     branches:
-      - [hjm, main]
+      - main
+      - hjm
 
 env:
   AWS_REGION: ap-northeast-2                   # set this to your preferred AWS region, e.g. us-west-1
