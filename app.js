@@ -2,6 +2,7 @@
 
 const path = require('path')
 const AutoLoad = require('fastify-autoload')
+require('dotenv').config()
 
 module.exports = async function (fastify, opts) {
   // Place here your custom code!
@@ -21,5 +22,13 @@ module.exports = async function (fastify, opts) {
   fastify.register(AutoLoad, {
     dir: path.join(__dirname, 'routes'),
     options: Object.assign({}, opts)
+  })
+
+  fastify.register(require('fastify-mongodb'), {
+    // force to close the mongodb connection when app stopped
+    // the default value is false
+    forceClose: true,
+  
+    url: process.env.MongoDB
   })
 }
