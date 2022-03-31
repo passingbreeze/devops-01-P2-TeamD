@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-sdlkfjsldkjfklsjdlfkjs
-=======
-klsjdlfkjs
->>>>>>> a99390d1a4e1f03bc91a8072e7f48b4de05ad349
