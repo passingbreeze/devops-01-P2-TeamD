@@ -3,11 +3,11 @@ name: Deploy to Amazon ECS
 on:
   push:
     branches:
-      - hjm
+      - crow
 
 env:
   AWS_REGION: ap-northeast-2                   # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: passingbreeze           # set this to your Amazon ECR repository name
+  ECR_REPOSITORY: project002        # set this to your Amazon ECR repository name
   # ECS_SERVICE: MY_ECS_SERVICE                 # set this to your Amazon ECS service name
   # ECS_CLUSTER: MY_ECS_CLUSTER                 # set this to your Amazon ECS cluster name
   # ECS_TASK_DEFINITION: MY_ECS_TASK_DEFINITION # set this to the path to your Amazon ECS task definition
@@ -27,8 +27,8 @@ jobs:
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
-        aws-access-key-id: ${{ secrets.HJM_AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.HJM_AWS_SECRET_ACCESS_KEY }}
+        aws-access-key-id: ${{ secrets.CROW_AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.CROW_AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
 
     - name: Login to Amazon ECR
@@ -38,7 +38,7 @@ jobs:
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
       env:
-        ECR_REGISTRY: 235824954020.dkr.ecr.ap-northeast-2.amazonaws.com
+        ECR_REGISTRY: 349873998748.dkr.ecr.ap-northeast-2.amazonaws.com
         IMAGE_TAG: latest
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
