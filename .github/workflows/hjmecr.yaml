@@ -1,4 +1,4 @@
-name: Deploy to HJM Amazon ECS
+name: Build Image and Push It to HJM Amazon ECR
 
 on:
   push:
