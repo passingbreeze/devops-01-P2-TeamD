@@ -1,10 +1,9 @@
 'use strict'
-const { ObjectId } = require('fastify-mongodb')
+const { readOne } = require('../../model')
 
 module.exports = async function (fastify, opts) {
     fastify.patch('/orders/:id/status', async function (request, reply) {
-        const order = this.mongo.db.collection('order')
-        const result = await order.findOne({_id: ObjectId(request.params.id)})
+        const result = await order.readOne(this.mongo, request.params.id)
         console.log({_id: ObjectId(request.params.id)})
         reply
         .code(201)
