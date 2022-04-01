@@ -6,19 +6,7 @@ module.exports = {
     const result = await collection.find({}).toArray()
     return result
   },
-  readOne: async (mongo, id) => {
-    const collection = mongo.client.db(process.env.DB_NAME).collection(process.env.COLLECTION_NAME)
-    const result = await collection.findOne({
-      _id: ObjectId(id)
-    })
-    return result
-  },
-  createOne: async (mongo, body) => {
-    const collection = mongo.client.db(process.env.DB_NAME).collection(process.env.COLLECTION_NAME)
-    const result = await collection.insertOne(body)
-    return result
-  },
-  updateOne: async (mongo, id, body) => {
+  PatchOne: async (mongo, id, body) => {
     const collection = mongo.client.db(process.env.DB_NAME).collection(process.env.COLLECTION_NAME)
     const result = await collection.findOneAndUpdate({
       _id: ObjectId(id)
@@ -29,12 +17,4 @@ module.exports = {
     })
     return result
   },
-  deleteOne: async (mongo, id) => {
-    const collection = mongo.client.db(process.env.DB_NAME).collection(process.env.COLLECTION_NAME)
-    const result = await collection.findOneAndDelete({
-      _id: ObjectId(id)
-    })
-    
-    return result
-  }
 }

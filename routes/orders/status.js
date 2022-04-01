@@ -1,10 +1,10 @@
 'use strict'
-const { readOne } = require('../../model')
+const { PatchOne } = require('../../model')
 
 module.exports = async function (fastify, opts) {
-    fastify.patch('/orders/:id/status', async function (request, reply) {
-        const result = await order.readOne(this.mongo, request.params.id)
-        console.log({_id: ObjectId(request.params.id)})
+    fastify.patch('/:id/status', async function (request, reply) {
+        const result = await PatchOne(this.mongo,request.params.id,request.body)
+        
         reply
         .code(201)
         .header('Content-Type', 'application/json; charset=utf-8')
