@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 FROM --platform=linux/amd64 node:16-alpine
  
 # 앱 디렉터리 생성
@@ -6,6 +7,9 @@ WORKDIR /app
 # directly choose
 =======
 FROM --platform=linux/amd64 node:16-alpine 
+=======
+FROM amd64/node:16-alpine 
+>>>>>>> a08e3f41cadcb8bca2e23aefab61a84fc2a73534
 
 # 앱 디렉터리 생성
 WORKDIR /usr/src/app
@@ -35,5 +39,9 @@ CMD ["npm","run","start"]
 =======
 
 EXPOSE 3000
+<<<<<<< HEAD
 CMD [ "npm","run","start"]
 >>>>>>> main
+=======
+CMD [ "npm","run","start" ]
+>>>>>>> a08e3f41cadcb8bca2e23aefab61a84fc2a73534
