@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-name: CROW Amazon ECR
-=======
 name: JUN Amazon ECR
->>>>>>> a08e3f41cadcb8bca2e23aefab61a84fc2a73534
 
 on:
   push:
@@ -11,11 +7,7 @@ on:
 
 env:
   AWS_REGION: ap-northeast-2                   # set this to your preferred AWS region, e.g. us-west-1
-<<<<<<< HEAD
-  ECR_REPOSITORY: project02        # set this to your Amazon ECR repository name
-=======
   ECR_REPOSITORY: project02          # set this to your Amazon ECR repository name
->>>>>>> a08e3f41cadcb8bca2e23aefab61a84fc2a73534
   # ECS_SERVICE: MY_ECS_SERVICE                 # set this to your Amazon ECS service name
   # ECS_CLUSTER: MY_ECS_CLUSTER                 # set this to your Amazon ECS cluster name
   # ECS_TASK_DEFINITION: MY_ECS_TASK_DEFINITION # set this to the path to your Amazon ECS task definition
@@ -51,10 +43,6 @@ jobs:
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-<<<<<<< HEAD
-
-=======
->>>>>>> a08e3f41cadcb8bca2e23aefab61a84fc2a73534
     # - name: Fill in the new image ID in the Amazon ECS task definition
     #   id: task-def
     #   uses: aws-actions/amazon-ecs-render-task-definition@v1
@@ -69,8 +57,4 @@ jobs:
     #     task-definition: ${{ steps.task-def.outputs.task-definition }}
     #     service: ${{ env.ECS_SERVICE }}
     #     cluster: ${{ env.ECS_CLUSTER }}
-<<<<<<< HEAD
     #     wait-for-service-stability: true
-=======
-    #     wait-for-service-stability: true
->>>>>>> a08e3f41cadcb8bca2e23aefab61a84fc2a73534
