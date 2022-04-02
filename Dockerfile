@@ -16,5 +16,5 @@ COPY . .
 # first param means local work dir 
 #the second one means app/
 
-EXPOSE 3000
+EXPOSE 5000
 CMD [ "npm","run","start" ]
