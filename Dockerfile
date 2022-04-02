@@ -1,5 +1,4 @@
 FROM amd64/node:16-alpine 
-
 # 앱 디렉터리 생성
 WORKDIR /usr/src/app
 
@@ -14,6 +13,8 @@ RUN npm install
 
 # 앱 소스 추가
 COPY . .
+# first param means local work dir 
+#the second one means app/
 
 EXPOSE 3000
 CMD [ "npm","run","start" ]
