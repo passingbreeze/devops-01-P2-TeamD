@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  post_build:
+    commands:
+      - echo Writing image definition file...
+      - printf '[{"name":"TeamD-Server","imageUri":"235824954020.dkr.ecr.ap-northeast-2.amazonaws.com/passingbreeze:latest"}]' > imagedefinitions.json
+
+artifacts:
+  files: imagedefinition.json
