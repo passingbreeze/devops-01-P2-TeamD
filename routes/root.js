@@ -4,6 +4,7 @@ module.exports = async function (fastify, opts) {
   fastify.get('/', async function (request, reply) {
     return reply
       .code(200)
+      .type('text/html')
       .send(`<!DOCTYPE html>
       <html>
       <head>
