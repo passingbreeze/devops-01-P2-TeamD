@@ -2,6 +2,7 @@ name: Deploy Release to Amazon ECS
 
 on:
   release:
+    types: [published, created]
     tags:
       - 'v*'
 
