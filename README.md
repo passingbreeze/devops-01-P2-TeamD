@@ -1,7 +1,7 @@
 # DevOps-TeamD-Project2
 
 
-![GitHub Workflow Status (event)](https://github.com/cs-devops-bootcamp/devops-01-P2-TeamD/actions/workflows/API_Test.yml/badge.svg?event=push) ![GitHub Workflow Status (event)](https://github.com/cs-devops-bootcamp/devops-01-P2-TeamD/actions/workflows/CI.yaml/badge.svg?event=push) ![GitHub Workflow Status (event)](https://github.com/cs-devops-bootcamp/devops-01-P2-TeamD/actions/workflows/release.yml/badge.svg?event=release) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/cs-devops-bootcamp/devops-01-P2-TeamD?include_prereleases)
+![GitHub Workflow Status (event)](https://github.com/cs-devops-bootcamp/devops-01-P2-TeamD/actions/workflows/API_Test.yml/badge.svg?event=push) ![GitHub Workflow Status (event)](https://github.com/cs-devops-bootcamp/devops-01-P2-TeamD/actions/workflows/CI.yml/badge.svg?event=push) ![GitHub Workflow Status (event)](https://github.com/cs-devops-bootcamp/devops-01-P2-TeamD/actions/workflows/release.yml/badge.svg?event=release) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/cs-devops-bootcamp/devops-01-P2-TeamD?include_prereleases)
 
 애플리케이션의 서버는 [`Fastify-CLI`](https://www.npmjs.com/package/fastify-cli)로  만들어졌습니다.
   
