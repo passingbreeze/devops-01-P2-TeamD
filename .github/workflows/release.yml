@@ -35,17 +35,14 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
-    - name: Docker meta
-      id: meta
-      uses: docker/metadata-action@v3
-      with:
-        images: 235824954020.dkr.ecr.ap-northeast-2.amazonaws.com/passingbreeze
-
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.event.release.tag_name }}
       run: |
-        docker build -t ${{ steps.meta.outputs.tags }} .
-        docker push ${{ steps.meta.outputs.tags }}
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
