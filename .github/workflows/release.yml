@@ -39,7 +39,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v3
       with:
-        images: 235824954020.dkr.ecr.ap-northeast-2.amazonaws.com/passingbreeze
+        images: passingbreeze
 
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
@@ -47,8 +47,8 @@ jobs:
         ECR_REGISTRY: 235824954020.dkr.ecr.ap-northeast-2.amazonaws.com
         IMAGE_TAG: ${{ steps.meta.outputs.tags }}
       run: |
-        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        docker build -t $ECR_REGISTRY/$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$IMAGE_TAG
 
     - name: Fill in the new image ID in the Amazon ECS task definition
       id: task-def
