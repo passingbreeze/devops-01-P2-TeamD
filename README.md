@@ -1,7 +1,6 @@
 # DevOps-TeamD-Project2 with 구병준, 임지윤, 홍정민
 
-![API Test](https://img.shields.io/github/workflow/status/cs-devops-bootcamp/devops-01-P2-TeamD/Test%20WAS?label=API%20Test&logo=fastify&logoColor=white) ![CI](https://img.shields.io/github/workflow/status/cs-devops-bootcamp/devops-01-P2-TeamD/HJM%20Amazon%20ECR?label=CI&logo=amazonaws) ![CD](https://img.shields.io/github/workflow/status/cs-devops-bootcamp/devops-01-P2-TeamD/Deploy%20Release%20to%20Amazon%20ECS?label=CD&logo=amazonaws) ![Release](https://img.shields.io/github/v/release/cs-devops-bootcamp/devops-01-P2-TeamD?include_prereleases&logo=github)
-
+![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/cs-devops-bootcamp/devops-01-P2-TeamD/API%20Test?event=push&label=API%20Test&logo=fastify) ![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/cs-devops-bootcamp/devops-01-P2-TeamD/HJM%20Amazon%20ECR?event=push&label=CI&logo=amazonaws) ![GitHub Workflow Status (event)](https://img.shields.io/github/workflow/status/cs-devops-bootcamp/devops-01-P2-TeamD/Deploy%20Release%20to%20Amazon%20ECS?event=release&label=CD&logo=amazonaws) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/cs-devops-bootcamp/devops-01-P2-TeamD?include_prereleases&logo=github)
 애플리케이션의 서버는 [`Fastify-CLI`](https://www.npmjs.com/package/fastify-cli)로  만들어졌습니다.
   
 Server of this project was bootstrapped with [`Fastify-CLI`](https://www.npmjs.com/package/fastify-cli).
