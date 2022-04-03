@@ -1,10 +1,10 @@
-# DevOps-TeamD-Project2 Web Application Server from Codestates Bootcamp
+# DevOps-TeamD-Project2 with 구병준, 임지윤, 홍정민
 
 ![API Test](https://img.shields.io/github/workflow/status/cs-devops-bootcamp/devops-01-P2-TeamD/Test%20WAS?label=API%20Test&logo=fastify&logoColor=white) ![CI](https://img.shields.io/github/workflow/status/cs-devops-bootcamp/devops-01-P2-TeamD/HJM%20Amazon%20ECR?label=CI&logo=amazonaws)
 
-이 프로젝트는 [`Fastify-CLI`](https://www.npmjs.com/package/fastify-cli)로  만들어졌습니다.
+애플리케이션의 서버는 [`Fastify-CLI`](https://www.npmjs.com/package/fastify-cli)로  만들어졌습니다.
   
-This project was bootstrapped with [`Fastify-CLI`](https://www.npmjs.com/package/fastify-cli).
+Server of this project was bootstrapped with [`Fastify-CLI`](https://www.npmjs.com/package/fastify-cli).
 
 -------------------------------
 

@@ -1,0 +1,67 @@
+name: Deploy to Amazon ECS
+
+on:
+  release:
+    types: [published]
+    tags:
+      - 'v*'
+
+env:
+  AWS_REGION: ap-northeast-2
+  ECR_REPOSITORY: passingbreeze
+  ECS_SERVICE: baedal-WAS
+  ECS_CLUSTER: project2-baedal-server
+  ECS_TASK_DEFINITION: task-definition.json
+  CONTAINER_NAME: TeamD-Server
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.HJM_AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.HJM_AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Login to Amazon ECR
+      id: login-ecr
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Docker meta
+      id: meta
+      uses: docker/metadata-action@v3
+      with:
+        images: 235824954020.dkr.ecr.ap-northeast-2.amazonaws.com/passingbreeze
+
+    - name: Build, tag, and push image to Amazon ECR
+      id: build-image
+      env:
+        ECR_REGISTRY: 235824954020.dkr.ecr.ap-northeast-2.amazonaws.com
+        IMAGE_TAG: ${{ steps.meta.outputs.tags }}
+      run: |
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+
+    - name: Fill in the new image ID in the Amazon ECS task definition
+      id: task-def
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: ${{ env.ECS_TASK_DEFINITION }}
+        container-name: ${{ env.CONTAINER_NAME }}
+        image: ${{ steps.build-image.outputs.image }}
+
+    - name: Deploy Amazon ECS task definition
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      with:
+        task-definition: ${{ steps.task-def.outputs.task-definition }}
+        service: ${{ env.ECS_SERVICE }}
+        cluster: ${{ env.ECS_CLUSTER }}
+        wait-for-service-stability: true

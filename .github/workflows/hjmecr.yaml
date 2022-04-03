@@ -7,8 +7,8 @@ on:
       - hjm
 
 env:
-  AWS_REGION: ap-northeast-2                   # set this to your preferred AWS region, e.g. us-west-1
-  ECR_REPOSITORY: passingbreeze           # set this to your Amazon ECR repository name
+  AWS_REGION: ap-northeast-2
+  ECR_REPOSITORY: passingbreeze
 
 jobs:
   deploy:
