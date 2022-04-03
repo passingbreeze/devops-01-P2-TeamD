@@ -12,11 +12,13 @@ This project was bootstrapped with [`Fastify-CLI`](https://www.npmjs.com/package
 
 
 프로젝트 폴더 위치에서,
+
 In the project directory, you can run:
 
 ### `npm install`
 
-를 입력하면 서버 구동이 필요한 라이브러리 등을 설치합니다
+를 입력하면 서버 구동이 필요한 라이브러리 등을 설치합니다.
+
 Install tools needed to run this server.
 
 ### `npm run dev`
