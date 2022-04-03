@@ -2,7 +2,7 @@ name: API Test
 
 on:
   push:
-    branches: [ master, hjm, jun, crow ]
+    branches: [ main, hjm, jun, crow ]
 
 jobs:
   build:
