@@ -1,4 +1,4 @@
-name: HJM Amazon ECR
+name: CI with ECR
 
 on:
   push:
