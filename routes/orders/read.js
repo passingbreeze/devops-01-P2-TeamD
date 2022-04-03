@@ -4,7 +4,6 @@ const { readAll } = require('../../model')
 module.exports = async function (fastify, opts) {
     fastify.get('/', async function (request, reply) {
         const result = await readAll(this.mongo);
-        console.log("result : "+result)
         
         if(result === []){
             reply
