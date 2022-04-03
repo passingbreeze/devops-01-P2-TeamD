@@ -1,6 +1,6 @@
 # DevOps-TeamD-Project2 Web Application Server from Codestates Bootcamp
 
-![API Test](https://img.shields.io/github/workflow/status/cs-devops-bootcamp/devops-01-P2-TeamD/Test%20WAS?label=API%20Test&logo=nodedotjs&logoColor=brightgreen) ![CI](https://img.shields.io/github/workflow/status/cs-devops-bootcamp/devops-01-P2-TeamD/HJM%20Amazon%20ECR?label=CI&logo=amazonaws)
+![API Test](https://img.shields.io/github/workflow/status/cs-devops-bootcamp/devops-01-P2-TeamD/Test%20WAS?label=API%20Test&logo=fastify&logoColor=white) ![CI](https://img.shields.io/github/workflow/status/cs-devops-bootcamp/devops-01-P2-TeamD/HJM%20Amazon%20ECR?label=CI&logo=amazonaws)
 
 이 프로젝트는 [`Fastify-CLI`](https://www.npmjs.com/package/fastify-cli)로  만들어졌습니다.
   
@@ -10,8 +10,14 @@ This project was bootstrapped with [`Fastify-CLI`](https://www.npmjs.com/package
 
 ## 실행 방법 Available Scripts
 
+
 프로젝트 폴더 위치에서,
 In the project directory, you can run:
+
+### `npm install`
+
+를 입력하면 서버 구동이 필요한 라이브러리 등을 설치합니다
+Install tools needed to run this server.
 
 ### `npm run dev`
 
