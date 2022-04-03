@@ -2,7 +2,7 @@ name: Test WAS
 
 on:
   push:
-    branches: [ master, hjm, jun, crow ]
+    branches: [ master, hjm, crow ]
 
 jobs:
   build:
