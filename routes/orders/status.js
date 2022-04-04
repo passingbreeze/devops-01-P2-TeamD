@@ -7,9 +7,18 @@ module.exports = async function (fastify, opts) {
         let goingPatch = await readOne(this.mongo, 'order', request.params.id);
         goingPatch.deliveryInfo.status = updateValue;
         const result = await PatchOne(this.mongo, 'order', request.params.id, goingPatch);
-        reply
-        .code(201)
-        .header('Content-Type', 'application/json; charset=utf-8')
-        .send(result);
+        if(result) {
+            reply
+            .code(201)
+            .header('Content-Type', 'application/json; charset=utf-8')
+            .send(result);
+        }
+        else {
+            reply
+            .code(404)
+            .header('Content-Type', 'application/json; charset=utf-8')
+            .send({ "Error" : "Not Found" });
+        }
+        
     })    
 }
