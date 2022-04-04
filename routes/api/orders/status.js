@@ -1,5 +1,5 @@
 'use strict'
-const { PatchOne, readOne } = require('../../model')
+const { PatchOne } = require('../../../model')
 
 module.exports = async function (fastify, opts) {
     fastify.patch('/:id/status', async function (request, reply) {
