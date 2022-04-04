@@ -6,7 +6,7 @@ module.exports = {
     const result = await collection.find({}).toArray()
     return result
   },
-  PatchOne: async (mongo, id, body,collectionName) => {
+  PatchOne: async (mongo, collectionName, id, body) => {
     const collection = mongo.db.collection(collectionName)
     const result = await collection.findOneAndUpdate({
       _id: ObjectId(id)

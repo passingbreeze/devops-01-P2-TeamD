@@ -3,7 +3,7 @@ name: CI with ECR
 on:
   push:
     branches:
-      - hjm
+      - main
 
 env:
   AWS_REGION: ap-northeast-2

@@ -3,7 +3,7 @@ const { PatchOne } = require('../../model')
 
 module.exports = async function (fastify, opts) {
     fastify.patch('/:id/status', async function (request, reply) {
-        const result = await PatchOne(this.mongo,request.params.id,request.body,'order')
+        const result = await PatchOne(this.mongo, request.params.id,request.body)
         
         reply
         .code(201)
