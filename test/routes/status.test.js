@@ -8,34 +8,31 @@ test('PATCH /orders/:id/status', async (t) => {
 
   const response = await app.inject({
     method: 'PATCH',
-    url: '/orders/62481c27d29976a39c5666c3/status',
+    url: '/api/orders/62481c27d29976a39c5666c3/status',
     payload: { "status": "PREPARING" }
   })
   const responseData = {
     "_id": "62481c27d29976a39c5666c3",
-    "deliveryInfo": {
-        "status": "PREPARING",
-        "assignedCourier": "박배송",
-        "estimatedDeleveryTime": 40
-    },
-    "consumer_id": "62481c27d29976a39c5666b2",
-    "restaurant": {
-        "name": "동백커피",
-        "address": "부산시 수영구 센텀1로 777"
-    },
     "orderedMenu": [
         {
             "name": "동백커피",
             "price": 4000,
-            "quantity": 3
+            "quantity": 3,
+            "_id": "62481c27d29976a39c5666b4"
         },
         {
             "name": "아인슈페너",
             "price": 4500,
-            "quantity": 2
+            "quantity": 2,
+            "_id": "62481c27d29976a39c5666b5"
         }
-    ]
-  }
+    ],
+    "deliveryInfo": {
+        "status": "PREPARING",
+        "estimatedDeleveryTime": 40
+    }
+}
+  // PREPARING (조리 중), READY_TO_PICK_UP (픽업 대기 중), REJECTED (주문 반려)
   t.same(response.statusCode, 201)
   t.same(JSON.parse(response.payload), responseData)
 })
