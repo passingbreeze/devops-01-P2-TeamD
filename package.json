@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "tap \"test/**/*.test.js\"",
+    "test": "tap \"test/**/*.test.js\" --test-args=mongodb://root:example@db.passingbreeze.click/baedal",
     "start": "fastify start -p 5000 -a 0.0.0.0 -l info app.js",
     "dev": "fastify start -w -l info -P app.js"
   },
