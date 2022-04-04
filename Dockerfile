@@ -15,5 +15,5 @@ RUN npm install
 # 앱 소스 추가
 COPY . .
 
-EXPOSE 3000
+EXPOSE 5000
 CMD [ "npm","run","start" ]
