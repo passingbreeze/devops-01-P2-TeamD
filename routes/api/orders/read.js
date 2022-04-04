@@ -1,5 +1,5 @@
 'use strict'
-const { readAll } = require('../../model')
+const { readAll } = require('../../../model')
 
 module.exports = async function (fastify, opts) {
     fastify.get('/', async function (request, reply) {
