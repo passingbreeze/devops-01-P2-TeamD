@@ -6,7 +6,7 @@ module.exports = async function (fastify, opts) {
         const result = await readAll(this.mongo,'order');
         const result2 = await readAll(this.mongo,'restaurants');
         //console.log("#####",result)
-        console.log("1234",result)
+        // console.log("1234",result)
         result[0].orderedMenu[0]._id=result2[2].menu[0]._id
         result[0].orderedMenu[1]._id=result2[2].menu[1]._id
         
@@ -19,7 +19,6 @@ module.exports = async function (fastify, opts) {
             const deliverStatus = result[0].deliveryInfo.status;
             const estimatedTime = result[0].deliveryInfo.estimatedDeleveryTime;
             const deliveryInfo = { deliverStatus, estimatedTime };
-            console.log(deliveryInfo);
            reply
             .code(200)
             .header('Content-Type','application/json')
